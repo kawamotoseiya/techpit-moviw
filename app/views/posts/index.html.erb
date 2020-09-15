@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<ul class="list-unstyled">
+  <% @posts.each do |post| %>
+  <li class="media">
+  	<%= link_to post.video_url.to_s do %>
+    <%= video_tag post.video.to_s, :size => "360x200" %>
+    <% end %>
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">
+      	<%= link_to post_path(post) do %>
+      	<%= post.title %>
+      	<% end %>
+      	</h5>
+      <%= post.body %>
+    </div>
+  </li>
+  <% end %>
+</ul>
